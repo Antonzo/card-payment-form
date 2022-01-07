@@ -1,0 +1,459 @@
+/* ============ */
+/* pixels < 400 */
+/* ============ */
+
+/* General styles */
+html {
+    font-size: 16px;
+}
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    font-size: 1rem;
+    font-family: Arial, Verdana, sans-serif;
+    line-height: 1.5rem;
+    background-image: url('../images/background400x640.jpg');
+    background-color: rgb(0, 0, 0);
+    background-position: center center; 
+    background-attachment: fixed; 
+    background-size: cover;
+    color: rgb(255, 255, 255);
+}
+#layout {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap-reverse;
+        flex-wrap: wrap-reverse;
+    background-color: rgba(38, 38, 38, 0.8);
+}
+.flex-right-side {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-left: auto;
+}
+svg {
+    scale: 1;
+    -webkit-filter: invert(99%) sepia(4%) saturate(516%) hue-rotate(253deg) brightness(113%) contrast(89%);
+            filter: invert(99%) sepia(4%) saturate(516%) hue-rotate(253deg) brightness(113%) contrast(89%);
+  }
+::-moz-selection { 
+    color: rgb(255, 255, 255);
+    background: rgb(114, 98, 127); 
+}
+::selection {
+    color: rgb(255, 255, 255);
+    background: rgb(114, 98, 127); 
+}
+
+/* Form styles */
+.main-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: inherit;
+}
+.main-form svg {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+}
+.subform-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 90vw;
+    min-width: 350px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 10px 25px 10px 25px;
+}
+.main-form input {
+    font-size: 1rem;
+    border: none;
+    text-align: center;
+    margin-left: auto;
+    background-color: rgba(38, 38, 38, 0);
+    color: rgb(255, 255, 255);
+}
+.main-form input:focus { 
+    outline: none;
+}
+.input-border-area {
+    height: 3rem;
+    border-radius: 5px;
+    width: 100%;
+    border: 2px solid  rgb(65, 65, 65);
+    cursor: pointer;
+}
+.input-border-area * {
+    cursor: pointer;
+}
+.input-border-area:focus-within {
+    border: 2px solid rgb(114, 98, 127); 
+    background-color: rgba(43, 43, 43, 0.8);
+    cursor: text;
+}
+.input-border-area:focus-within * {
+    cursor: text;
+}
+.subform-title {
+    font-weight: 600;
+}
+.subform-description {
+    font-size: 0.75rem;
+    line-height: 0.6rem;
+    color: rgb(102, 102, 102);
+}
+.superscript {
+    font-size: 0.65rem;
+}
+.clock {
+    margin-left: auto;
+    font-size: 1.2rem;
+}
+
+/* When form disabled */
+.main-form-disabled .input-border-area {
+    pointer-events: none;
+    background-color: rgba(51, 51, 51, 0.8);
+}
+.main-form-disabled input, .main-form-disabled .subform-title, 
+.main-form-disabled .form-separator {
+    color: rgb(115,115,115);
+}
+.main-form-disabled svg:not(.edit-toggle-icon, .rocket-icon) {
+    -webkit-filter: invert(50%) sepia(8%) saturate(15%) hue-rotate(28deg) brightness(92%) contrast(94%);
+            filter: invert(50%) sepia(8%) saturate(15%) hue-rotate(28deg) brightness(92%) contrast(94%);
+}
+button {
+    display: block;
+    width: 100%;
+    height: calc(3rem + 4px);
+    color: inherit;
+    background-image: -webkit-gradient(linear, left top, right top, from(rgb(218, 84, 135)), to(rgb(152, 92, 224)));
+    background-image: -o-linear-gradient(left, rgb(218, 84, 135), rgb(152, 92, 224));
+    background-image: linear-gradient(to right, rgb(218, 84, 135), rgb(152, 92, 224));
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.pay-button-disabled button {
+    background-image: none;
+    background-color: rgba(51, 51, 51, 0.8);
+    border-radius: 5px;
+    color: rgb(117, 117, 117);
+    pointer-events: none;
+}
+
+/* Receipt styles */
+.receipt-main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+
+/* Receipt info */
+/* Info product */
+.receipt-info-element {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    min-width: 300px;
+    width: min(70vw, 350px);
+}
+.receipt-info-element > ul {
+    padding-top: 25px;
+    padding-bottom: 10px;
+    background-color: rgb(56, 56, 56);
+    border-bottom: 2px dashed rgb(77, 77, 77);
+    border-radius: 8px 8px 0px 0px;
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+}
+.receipt-info-element ul li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0px 15px 15px 15px;
+}
+.receipt-info-list-field {
+    color: rgb(115,115,115);
+}
+.receipt-info-list-value {
+    font-weight: 600;
+}
+.receipt-info-element > div {
+    background-color: rgb(56, 56, 56);
+    border-radius: 0px 0px 15px 15px;
+    height: calc(3rem + 40px);
+    padding-left: 15px;
+    padding-right: 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.money-amount-integer {
+    font-size: 1.3rem;
+    font-weight: 900;
+}
+.currency {
+    color: rgb(115,115,115);
+}
+
+/* Receipt credit card */
+.receipt-card-element {
+    position: absolute;
+    visibility: hidden;
+    z-index: 1;
+    width: 200px;
+    height: 300px;
+    background-color: rgb(40, 40, 40);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-radius: 8px;
+}
+.receipt-card-element div:not(.light-element, .footer-element) {
+    width: 80%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+}
+.light-element {
+    width: 65px;
+    height: 5px;
+    background-color: rgb(244, 250, 18);
+    margin-top: -5px;
+    -webkit-box-shadow: 0px 15px 60px 15px rgb(244, 250, 18);
+            box-shadow: 0px 15px 60px 15px rgb(244, 250, 18);
+}
+.card-details-element span {
+    font-size: 8px;
+    line-height: 1em;
+    font-weight: 600;
+    margin-bottom: -40px;
+}
+@font-face {
+    font-family: CustomFont;
+    src: local("Bete"), url("../fonts/BeteNoirNF.ttf") format("true-type");
+}
+.footer-element {
+    padding-left: 10%;
+    padding-right: 10%;
+    font-family: Bete, CustomFont;
+    color: rgb(0, 0, 0);
+    height: 60px;
+    width: 80%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: rgb(244, 250, 18);
+    border-radius: 0 0 8px 8px;
+}
+.footer-element svg {
+    -webkit-filter: invert(0%) sepia(0%) saturate(7465%) hue-rotate(258deg) brightness(93%) contrast(108%);
+            filter: invert(0%) sepia(0%) saturate(7465%) hue-rotate(258deg) brightness(93%) contrast(108%);
+}
+
+
+/* ============= */
+/* 600 <= pixels */
+/* ============= */
+@media screen and (min-width: 600px) {
+    .main-form input {
+        margin-left: 0;
+    }
+    .input-border-area {
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+    }
+}
+
+
+/* ============= */
+/* 768 <= pixels */
+/* ============= */
+@media screen and (min-width: 768px) {
+    body {
+      background-image: url('../images/background768x1229.jpg');
+    }
+    #layout {
+      -webkit-box-align: end;
+          -ms-flex-align: end;
+              align-items: flex-end;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+    }
+  
+    /* Form styles */
+    .subform-container {
+      width: 50vw;
+    }
+
+    /* Receipt info */
+    /* Info product */
+    .receipt-info-element {
+        width: 25vw;
+    }
+    .receipt-info-element > ul {
+        height: 20rem;
+    }
+    .receipt-info-element ul li {
+        line-height: 1.5rem;
+        padding: 5px 15px 5px 15px;
+    }
+
+    /* Info pay */
+    .receipt-info-element > div {
+        height: 5rem;
+    }
+
+    /* Receipt credit card */
+    .receipt-card-element {
+        position: static;
+        visibility: visible;
+        margin-bottom: -13rem;
+    }
+}
+
+
+/* ============== */
+/* 1024 <= pixels */
+/* ============== */
+@media screen and (min-width: 1024px) {
+    body {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+    }
+    #layout {
+      padding-right: 20px;
+    }
+    .subform-container {
+        margin: 20px 35px 20px 35px;
+    }
+}
+
+
+/* ============== */
+/* 1200 <= pixels */
+/* ============== */
+@media screen and (min-width: 1200px) {
+    body {
+        background-image: url('../images/background1229x768.jpg');
+    }
+    html {
+        font-size: 18px;
+    }
+    svg:not(.receipt-card-element svg) {
+        scale: 1.2;
+    }
+}
+
+
+/* ============== */
+/* 1400 <= pixels */
+/* ============== */
+@media screen and (min-width: 1400px) {
+    html {
+        font-size: 20px;
+    }
+    body {
+        background-image: url('../images/background1920x1200.jpg');
+    }
+    #layout {
+        max-width: 1200px;
+    }
+    svg:not(.receipt-card-element svg) {
+        scale: 1.4;
+    }
+    .receipt-card-element svg {
+        scale: 1.2;
+    }
+    .subform-container {
+        max-width: 700px;
+    }
+    .receipt-info-element {
+        max-width: 400px;
+    }
+    .receipt-card-element {
+        width: 240px;
+        height: 360px;
+    }
+    .footer-element {
+        height: 72px;
+    }
+    .card-details-element span {
+        font-size: 9px;
+    }
+}
